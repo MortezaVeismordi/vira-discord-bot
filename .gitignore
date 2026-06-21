@@ -1,0 +1,5 @@
+node_modules
+
+.env
+PROJECT_CONTEXT.md
+SUMMARY.md

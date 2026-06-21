@@ -1,0 +1,69 @@
+{
+    "compilerOptions": {
+        // ─── زبان و محیط ───────────────────────────────
+        "target": "ES2022",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "lib": [
+            "ES2022"
+        ],
+        // ─── مسیرها ────────────────────────────────────
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "./*"
+            ],
+            "@core/*": [
+                "core/*"
+            ],
+            "@infrastructure/*": [
+                "infrastructure/*"
+            ],
+            "@presentation/*": [
+                "presentation/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ],
+            "@config/*": [
+                "config/*"
+            ]
+        },
+        // ─── بررسی نوع‌ها ───────────────────────────────
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        // ─── خروجی ─────────────────────────────────────
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "removeComments": false,
+        // ─── سازگاری ────────────────────────────────────
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        // ─── عملکرد ─────────────────────────────────────
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": true,
+        "tsBuildInfoFile": "./dist/.tsbuildinfo"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "tests",
+        "**/*.spec.ts",
+        "**/*.test.ts"
+    ]
+}
