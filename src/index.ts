@@ -32,14 +32,11 @@ async function bootstrap(): Promise<void> {
 
     const llmConfig = {
         ...rawLlmConfig,
-        // اگر متغیر محیطی ست شده باشد اولویت اول است، در غیر این صورت از مقدار پیش‌فرض کانفیگ استفاده می‌شود
-        provider: envProvider || rawLlmConfig.provider || "ollama",
-        defaultProvider: envProvider || rawLlmConfig.defaultProvider || "ollama",
-        activeProvider: envProvider || (rawLlmConfig as any).activeProvider || "ollama"
+        defaultProvider: (envProvider || rawLlmConfig.defaultProvider || "ollama") as "ollama" | "openrouter",
     };
 
     console.log("[Vira System] Dynamic Config Initialized:", {
-        activeProvider: llmConfig.provider,
+        activeProvider: llmConfig.defaultProvider,
         loadedFromEnv: !!envProvider
     });
 
